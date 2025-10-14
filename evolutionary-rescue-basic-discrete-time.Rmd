@@ -1,7 +1,7 @@
 ---
 title: "Basic model of evolutionary rescue in discrete time"
 author: "Claudia Bank"
-date: "2024-10-15"
+date: "2025-10-14"
 output:
   html_document:
     df_print: paged
@@ -173,29 +173,6 @@ print(head(data_table))
 * Why does this code block run much more slowly than the others?
 * Why is it useful to define the parameters at the beginning (e.g. `init_a=100`) and use their names rather than the numbers throughout the rest of the code?
 * What does the function `which` do?
-
-## Making your results reproducible
-When you generate “random numbers” in R, you are actually generating pseudorandom numbers. These numbers are generated with an algorithm that requires a seed to initialize. This means that if you know the seed and the generator, you can reproduce the output.
-
-```{r}
-# Draw 5 (pseudo)random numbers from a normal distribution
-rnorm(5)
-# Draw again 5 (pseudo)random numbers from a normal distribution
-rnorm(5)
-``` 
-
-Expectedly, the numbers are different. How can we reproduce the exact output?
-
-```{r}
-#initialize the seed of the pseudo random generator
-set.seed(1)
-# Draw 5 (pseudo)random numbers from a normal distribution
-rnorm(5)
-#initialize the seed of the pseudo random generator
-set.seed(1)
-# Draw again 5 (pseudo)random numbers from a normal distribution
-rnorm(5)
-``` 
 
 ## Next steps
 So, where do you go from here? Of course you won't just stare at these tables (at least not forever). Visualization would be a good step to see how the minimum population size varies with the decay rate and the selection coefficient. And you might want to include only the cases in which rescue happens, and also extract the rescue probability in parallel. However, the idea is that you pick a question that you find (more) interesting and implement modified versions of this code to address your question of choice.
